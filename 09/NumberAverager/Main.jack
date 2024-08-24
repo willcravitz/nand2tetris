@@ -1,0 +1,64 @@
+class Main {
+
+    // Task 3
+    function int average(Array a, int length) {
+        var int i, sum;
+        let i = 0;
+        let sum = 0;
+        while (i < length) {
+            let sum = sum + a[i];
+            let i = i + 1;
+        }
+        return (sum/length);
+    }
+
+    function void main() {
+        // Task 1
+        // var int input, sum, length;
+        // let length = 0;
+        // let sum = 0;
+        // let input = Keyboard.readInt("Enter a Number (or -1 to quit): ");
+        // while (~(input=-1)) {
+        //     let sum = sum + input;
+        //     let length = length + 1;
+        //     let input = Keyboard.readInt("Enter a Number (or -1 to quit): ");
+        // }
+        // do Output.printString("The average is ");
+        // do Output.printInt(sum / length);
+        // return;
+
+        // Task 2
+        // var int sum, length;
+        // var String input;
+        // let length = 0;
+        // let sum = 0;
+        // let input = Keyboard.readLine("Enter a Number (or Q to quit): ");
+        // while (~(input.charAt(0) = "Q")) {
+        //     let input = input.intValue();
+        //     let sum = sum + input;
+        //     let length = length + 1;
+        //     let input = Keyboard.readLine("Enter a Number (or Q to quit): ");
+        // }
+        // do Output.printString("The average is ");
+        // do Output.printInt(sum / length);
+        // return;
+
+        // Task 3
+        var Array a;
+        var int sum, length, avg;
+        var String input;
+        let a = Array.new(50);
+        let length = 0;
+        let sum = 0;
+        let input = Keyboard.readInt("Enter a Number (or -1 to quit): ");
+        while (~(input=-1)) {
+            let a[length] = input;
+            let length = length + 1;
+            let input = Keyboard.readInt("Enter a Number (or -1 to quit): ");
+        }
+        do Output.printString("The average is ");
+        let avg = Main.average(a, length);
+        do Output.printInt(avg);
+        return;
+    }
+}

@@ -1,0 +1,74 @@
+// Helpful methods for Arrays
+
+class ArrayFunction {
+
+    /** Returns sum of elements in the array */
+    function int sum(Array a, int len) {
+        var int i, sum;
+        let i = 0;
+        let sum = 0;
+        while (i < len) {
+            let sum = sum + a[i];
+            let i = i + 1;
+        }
+        return sum;
+    }
+
+    /** Returns average of elements in the array */
+    function int average(Array a, int len) {
+        var int sum;
+        let sum = ArrayFunction.sum(a, len);
+        return sum / len;
+    }
+
+    /** Returns a new array with same length and contents as input */
+    function Array copy(Array a, int len) {
+        var Array b;
+        var int i;
+        let b = Array.new(len);
+        let i = 0;
+        while (i < len) {
+            let b[i] = a[i];
+            let i = i + 1;
+        }
+        return b;
+    }
+
+    /** Evaluates whether two arrays have same elements and length */
+    function boolean equals(Array a, Array b, int len) {
+        var int i;
+        let i = 0;
+        while (i < len) {
+            if (~(a[i]=b[i])) {
+                return false;
+            } else {
+                let i = i + 1;
+            }
+        }
+        return true;
+    }
+
+    /** Prints array in the form [a[0], a[1], .. a[len-1]] */
+    function void prettyPrint(Array a, int len) {
+        var String out;
+        var String n;
+        var char c;
+        var int i;
+        let n = String.new(1);
+        let out = String.new(50);
+        do out.appendChar(91);
+        let i = 0;
+        while (i < len) {
+            do n.setInt(a[i]);
+            let c = n.charAt(0);
+            do out.appendChar(c);
+            do out.appendChar(44);
+            let i = i + 1;
+        }
+        do out.eraseLastChar();
+        do out.appendChar(93);
+        do Output.printString(out);
+        return;
+    }
+
+}

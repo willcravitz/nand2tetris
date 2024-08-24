@@ -1,0 +1,24 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/09/Fraction/Main.jack
+
+class Main {
+   function void main() {
+      var Fraction a, b, d, e;      
+      let a = Fraction.new(2,3); // New fraction 2/3 
+      let b = Fraction.new(3,8); // New fraction 3/8 
+
+      let d = a.times(b); // Computes d = a * b
+      do d.print();
+      do Output.println();
+
+      let e = a.plus(b);  // Computes e = a + b
+      do e.print();
+      do Output.println();
+
+      do b.makeReciprocal(); // Turns b into 8/3
+      do b.print();
+      return;
+   }
+}

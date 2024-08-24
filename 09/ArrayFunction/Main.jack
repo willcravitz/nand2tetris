@@ -1,0 +1,60 @@
+class Main {
+    function void main() {
+
+        // init three arrays a, b, and c
+        var Array a, b, c;
+        var int length, sum, avg;
+        var boolean e;
+        let length = 3;
+        let a = Array.new(length);
+        let b = Array.new(length);
+        let c = Array.new(length);
+
+        // sets contents of Array a to [1,2,6]
+        let a[0] = 1;
+        let a[1] = 2;
+        let a[2] = 6;
+
+        // sets contents of Array c to [2,3,6]
+        let c[0] = 2;
+        let c[1] = 3;
+        let c[2] = 7;
+
+        // print a and c
+        do ArrayFunction.prettyPrint(a, length);
+        do Output.println();
+        do ArrayFunction.prettyPrint(c, length);
+
+        // compute sum of elements of a (9)
+        let sum = ArrayFunction.sum(a, length);
+        do Output.println();
+        do Output.printInt(sum);
+
+        // compute average of elements of c (4)
+        let avg = ArrayFunction.average(c, length);
+        do Output.println();
+        do Output.printInt(avg);
+
+        // create b copied from a
+        let b = ArrayFunction.copy(a, length);
+
+        // determine whether b has same elements as a
+        let e = ArrayFunction.equals(a, b, length);
+        do Output.println();
+        if (e) {
+            do Output.printString("True");
+        } else {
+            do Output.printString("False");
+        }
+
+        // determine whether c has same elements as a
+        let e = ArrayFunction.equals(a, c, length);
+        do Output.println();
+        if (e) {
+            do Output.printString("True");
+        } else {
+            do Output.printString("False");
+        }
+        return;
+    }
+}
